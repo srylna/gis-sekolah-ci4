@@ -1,0 +1,6 @@
+writable/*
+!writable/index.html
+!writable/logs/index.html
+!writable/session/index.html
+!writable/cache/index.html
+.env
