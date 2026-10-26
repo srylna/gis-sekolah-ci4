@@ -35,9 +35,9 @@
   //	}).addTo(map);
 
     const map = L.map('map', {
-	center: [-7.294856121608108, 109.04345927849569],
-	zoom: 12,
-	layers: [peta1]
+	center: [<?= $web['coordinat_wilayah'] ?>],
+	zoom: <?= $web['zoom_view'] ?>,
+	layers: [peta2]
 });
 
 const baseMaps = {
@@ -49,8 +49,18 @@ const baseMaps = {
 
 L.control.layers(baseMaps).addTo(map);
 
+<?php foreach ($wilayah as $key => $value) { ?>
+      L.geoJSON(<?= $value['geojson'] ?>, {
+        fillColor: "<?= $value['warna'] ?>",
+        fillOpacity: 0.5,
+      })
+      .bindPopup("<b><?= $value['nama_wilayah'] ?></b>")
+      .addTo(map);
+    <?php } ?>
+
 setTimeout(function() {
         map.invalidateSize();
     }, 200);
 });
+
 </script>

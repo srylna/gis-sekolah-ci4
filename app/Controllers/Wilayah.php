@@ -10,8 +10,8 @@ class Wilayah extends BaseController
 {
      public function __construct()
     {
-        $this->modelWilayah = new ModelWilayah();
-        $this->modelSetting = new ModelSetting();
+        $this->ModelWilayah = new ModelWilayah();
+        $this->ModelSetting = new ModelSetting();
     }
 
     public function index(): string
@@ -20,8 +20,8 @@ class Wilayah extends BaseController
             'title' => 'Wilayah',
             'menu'  => 'wilayah',
             'page' => 'wilayah/v_index',
-            'wilayah' => $this->modelWilayah->Alldata(),
-            'web' => $this->modelSetting->Dataweb(),
+            'wilayah' => $this->ModelWilayah->Alldata(),
+            'web' => $this->ModelSetting->Dataweb(),
         ];
         return view('v_template_back_end', $data);
     }

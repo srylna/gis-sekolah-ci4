@@ -130,43 +130,43 @@
    const map = L.map('map', {
     center: [<?= $web['coordinat_wilayah'] ?>],
     zoom: <?= $web['zoom_view'] ?>,
-    layers: [peta1]
-});
+    layers: [peta2]
+   });
 
-const baseMaps = {
-	'OpenStreetMap': peta1,
-	'satellite': peta2,
-    'Streets': peta3,
-    'Night': peta4,
-};
+    const baseMaps = {
+    	'OpenStreetMap': peta1,
+    	'satellite': peta2,
+        'Streets': peta3,
+        'Night': peta4,
+   };
 
-L.control.layers(baseMaps).addTo(map);
-
-<?php foreach ($wilayah as $key => $value) { ?>
-  L.geoJSON(<?= $value['geojson'] ?>, {
-    fillColor: "<?= $value['warna'] ?>",
-    fillOpacity: 0.5,
-  })
-  .bindPopup("<b><?= $value['nama_wilayah'] ?></b>")
-  .addTo(map);
-<?php } ?>
-
-setTimeout(function() {
-        map.invalidateSize();
+    L.control.layers(baseMaps).addTo(map);
+    
+    <?php foreach ($wilayah as $key => $value) { ?>
+      L.geoJSON(<?= $value['geojson'] ?>, {
+        fillColor: "<?= $value['warna'] ?>",
+        fillOpacity: 0.5,
+      })
+      .bindPopup("<b><?= $value['nama_wilayah'] ?></b>")
+      .addTo(map);
+    <?php } ?>
+    
+    setTimeout(function() {
+            map.invalidateSize();
     }, 200);
-});
-</script>
-
-<script>
-  $(document).ready(function() {
-    $('#example1').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true
-    });
   });
+  </script>
+
+  <script>
+      $(document).ready(function() {
+        $('#example1').DataTable({
+          "paging": true,
+          "lengthChange": true,
+          "searching": true,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false,
+          "responsive": true
+        });
+      });
   </script>
