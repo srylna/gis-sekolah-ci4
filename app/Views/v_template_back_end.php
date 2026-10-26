@@ -2,10 +2,16 @@
 <html lang="en">
   <!--begin::Head-->
   <head>
-    <a href="<?= base_url('AdminLTE') ?>/dist/css/adminlte.css" rel="stylesheet">
+    <a href="<?= base_url('Admin') ?>/dist/css/adminlte.css" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>GIS Sekolah | <?= $title ?> </title>
     
+    <!-- CDN CSS Bootstrap 5 (Wajib Ada) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  
+    <!-- CSS AdminLTE 4 (Gunakan <link> bukan <a>) -->
+    <link rel="stylesheet" href="<?= base_url('AdminLTE') ?>/dist/css/adminlte.css" />
+
     <!-- CDN Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
@@ -154,7 +160,7 @@
         <!--begin::Container-->
         <div class="container-fluid">
           <!--begin::Brand-->
-          <a href="<?= base_url('AdminLTE') ?>" class="navbar-brand d-flex align-items-center">
+          <a href="<?= base_url('Admin') ?>" class="navbar-brand d-flex align-items-center">
             <img
               src="<?= base_url('AdminLTE/dist/assets/img/AdminLTELogo.png') ?>"
               alt="AdminLTE Logo"
@@ -247,7 +253,7 @@
             </ul>
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('AdminLTE/docs/introduction.html') ?>">
+                <a class="nav-link" href="<?= base_url('AdminLTE') ?>/docs/introduction.html">
                   <i class="bi bi-box-arrow-in-right"></i>
                   Log out
                 </a>
@@ -263,7 +269,7 @@
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
-    <a href="<?= base_url('AdminLTE/') ?>" class="brand-link">
+    <a href="<?= base_url('Admin') ?>" class="brand-link">
       <img
         src="<?= base_url('AdminLTE/dist/assets/img/AdminLTELogo.png') ?>"
         alt="AdminLTE Logo"
@@ -400,19 +406,21 @@
       
       <!-- bootsrap 5 -->
       <script src="<?= base_url('AdminLTE') ?>/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+      
+      <!-- CDN JS Bootstrap 5 Bundle (Wajib untuk Pop-up Modal) -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
       <!-- bootsrap color picker -->
       <script src="https://cdnjs.cloudflare.net/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
      
       <!-- Pickr JS -->
-<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-
+      <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+     
       <!-- Script Pendukung & DataTables -->
     <script src="<?= base_url('AdminLTE') ?>/dist/js/jquery.min.js"></script>
     <script src="<?= base_url('AdminLTE') ?>/dist/js/popper.min.js" crossorigin="anonymous"></script>
     <script src="<?= base_url('AdminLTE') ?>/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="<?= base_url('AdminLTE') ?>/dist/js/adminlte.js"></script>
-
       <!-- DataTables JS Integrasi Bootstrap 5 -->
     <script src="<?= base_url('AdminLTE') ?>/dist/js/jquery.dataTables.min.js"></script>
     <script src="<?= base_url('AdminLTE') ?>/dist/js/dataTables.bootstrap5.min.js"></script>

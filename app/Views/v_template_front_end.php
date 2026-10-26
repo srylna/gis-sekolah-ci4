@@ -234,7 +234,7 @@
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
-    <a href="<?= base_url('AdminLTE/') ?>" class="brand-link">
+    <a href="<?= base_url('Admin') ?>" class="brand-link">
       <img
         src="<?= base_url('AdminLTE/dist/assets/img/AdminLTELogo.png') ?>"
         alt="AdminLTE Logo"
