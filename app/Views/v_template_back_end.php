@@ -11,6 +11,14 @@
   
     <!-- CSS AdminLTE 4 (Gunakan <link> bukan <a>) -->
     <link rel="stylesheet" href="<?= base_url('AdminLTE') ?>/dist/css/adminlte.css" />
+  
+    <!-- Select2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
 
     <!-- CDN Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -404,28 +412,25 @@
     </div>
     <!--end::App Wrapper-->
       
-      <!-- bootsrap 5 -->
-      <script src="<?= base_url('AdminLTE') ?>/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-      
-      <!-- CDN JS Bootstrap 5 Bundle (Wajib untuk Pop-up Modal) -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- jQuery WAJIB Paling Pertama -->
+  <script src="<?= base_url('AdminLTE') ?>/dist/js/jquery.min.js"></script>
+  <script src="<?= base_url('AdminLTE') ?>/dist/js/popper.min.js"></script>
+  <script src="<?= base_url('AdminLTE') ?>/dist/js/bootstrap.min.js"></script>
+  <script src="<?= base_url('AdminLTE') ?>/dist/js/adminlte.js"></script>
 
-      <!-- bootsrap color picker -->
-      <script src="https://cdnjs.cloudflare.net/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
-     
-      <!-- Pickr JS -->
-      <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-     
-      <!-- Script Pendukung & DataTables -->
-    <script src="<?= base_url('AdminLTE') ?>/dist/js/jquery.min.js"></script>
-    <script src="<?= base_url('AdminLTE') ?>/dist/js/popper.min.js" crossorigin="anonymous"></script>
-    <script src="<?= base_url('AdminLTE') ?>/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="<?= base_url('AdminLTE') ?>/dist/js/adminlte.js"></script>
-      <!-- DataTables JS Integrasi Bootstrap 5 -->
-    <script src="<?= base_url('AdminLTE') ?>/dist/js/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url('AdminLTE') ?>/dist/js/dataTables.bootstrap5.min.js"></script>
-    <script src="<?= base_url('AdminLTE') ?>/dist/js/dataTables.responsive.min.js"></script>
-    <script src="<?= base_url('AdminLTE') ?>/dist/js/responsive.bootstrap5.min.js"></script>
+  <!-- JQuery & Select2 JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- CDN JS DataTables (Dimuat SETELAH jQuery) -->
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
+
+  <!-- Color Picker / Pickr JS (Opsional) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.4.0/js/bootstrap-colorpicker.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
 </body>
   <!--end::Body-->
 </html>

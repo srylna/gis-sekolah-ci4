@@ -9,7 +9,7 @@ class Admin extends BaseController
 
     public function __construct()
     {
-        $this->modelSetting = new ModelSetting();
+        $this->ModelSetting = new ModelSetting();
     }
 
     public function index()
@@ -28,7 +28,7 @@ class Admin extends BaseController
             'title' => 'Setting',
             'menu'  => 'setting',
             'page' => 'v_setting',
-            'web' => $this->modelSetting->Dataweb(),
+            'web' => $this->ModelSetting->Dataweb(),
         ];
         return view('v_template_back_end', $data);
     }

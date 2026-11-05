@@ -1,5 +1,6 @@
 
 <div id="map" style="width: 1550px; height: 750px;"></div>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
 

@@ -67,7 +67,7 @@ class Wilayah extends BaseController
             'warna' => $this->request->getPost('warna'),
             'geojson' => $this->request->getPost('geojson'),
           ];
-          $this->modelWilayah->InsertData($data);
+          $this->ModelWilayah->InsertData($data);
           session()->setFlashdata('insert', 'Data berhasil ditambahkan.');
           return redirect()->to('wilayah');
         } else {
@@ -83,7 +83,7 @@ class Wilayah extends BaseController
             'title' => 'Edit Wilayah',
             'menu'  => 'wilayah',
             'page' => 'wilayah/v_edit',
-            'wilayah' => $this->modelWilayah->DetailData($id_wilayah),
+            'wilayah' => $this->ModelWilayah->DetailData($id_wilayah),
         ];
         return view('v_template_back_end', $data);
     }
@@ -120,7 +120,7 @@ class Wilayah extends BaseController
             'warna' => $this->request->getPost('warna'),
             'geojson' => $this->request->getPost('geojson'),
           ];
-          $this->modelWilayah->UpdateData($data);
+          $this->ModelWilayah->UpdateData($data);
           session()->setFlashdata('update', 'Data berhasil diupdate.');
           return redirect()->to('wilayah');
         } else {
@@ -135,7 +135,7 @@ class Wilayah extends BaseController
         $data = [
             'id_wilayah' => $id_wilayah,
         ];
-        $this->modelWilayah->DeleteData($data);
+        $this->ModelWilayah->DeleteData($data);
         session()->setFlashdata('delete', 'Data berhasil dihapus.');
         return redirect()->to('wilayah');
     }
