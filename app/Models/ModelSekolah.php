@@ -22,6 +22,7 @@ class ModelSekolah extends Model
     {
         return $this->db->table('tbl_sekolah')
          ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = tbl_sekolah.id_jenjang', 'left')
+         ->join('tbl_wilayah', 'tbl_wilayah.id_wilayah = tbl_sekolah.id_wilayah', 'left')
          ->join('tbl_kabupaten', 'tbl_kabupaten.id_kabupaten = tbl_sekolah.id_kabupaten', 'left')
          ->join('tbl_kecamatan', 'tbl_kecamatan.id_kecamatan = tbl_sekolah.id_kecamatan', 'left')
         ->where('id_sekolah', $id_sekolah)

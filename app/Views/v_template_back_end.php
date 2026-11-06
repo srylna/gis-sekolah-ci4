@@ -200,75 +200,14 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <!--end::Toggler-->
-          <!--begin::Collapsible Menu-->
-          <div class="collapse navbar-collapse" id="topNavMenu">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../starter.html">Starter</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >Pages</a
-                >
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="../pages/profile.html">Profile</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="../pages/invoice.html">Invoice</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="../pages/calendar.html">Calendar</a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="../pages/faq.html">FAQ</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >Forms</a
-                >
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="../forms/elements.html">Elements</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="../forms/advanced.html">Advanced Elements</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="../forms/editors.html">Editors</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="../forms/validation.html">Validation</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('AdminLTE') ?>/docs/introduction.html">
-                  <i class="bi bi-box-arrow-in-right"></i>
-                  Log out
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!--end::Collapsible Menu-->
+          <!-- Navbar Right Links (Log out di Ujung Kanan) -->
+<ul class="navbar-nav ms-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('AdminLTE') ?>/docs/introduction.html">
+            <i class="bi bi-box-arrow-in-right"></i> Log out
+        </a>
+    </li>
+</ul>
         </div>
         <!--end::Container-->
       </nav>
