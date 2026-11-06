@@ -47,22 +47,24 @@ var map = L.map('map').setView([<?= $setting['coordinat_wilayah'] ?>], <?= $sett
         });
     <?php endforeach; ?>
 
-    // 4. Custom Icon Marker Sekolah (Opsional / Marker Standar)
-    var iconSekolah = L.icon({
-        iconUrl: '<?= base_url('icon/marker.png') ?>', // Sesuaikan folder icon kamu jika ada
-        iconSize: [30, 40],
-        iconAnchor: [15, 40],
-        popupAnchor: [0, -35]
-    });
-
-    // 5. Looping Marker Semua Sekolah dari Database
+    // 4. Looping Sekolah dengan Icon Sesuai Jenjang
     <?php foreach ($sekolah as $s) : ?>
         <?php if (!empty($s['coordinat'])) : ?>
+            
+            // Buat Icon Kustom Dinamis dari Tabel Jenjang
+            var iconSekolah = L.icon({
+                iconUrl: '<?= base_url('marker/' . $s['marker']) ?>',
+                iconSize: [30, 40],
+                iconAnchor: [15, 40],
+                popupAnchor: [0, -35]
+            });
+
+            // Pasang Marker Menggunakan Icon Jenjang
             var marker = L.marker([<?= $s['coordinat'] ?>], {
-                // icon: iconSekolah // Hapus komen ini jika menggunakan icon kustom
+                icon: iconSekolah
             }).addTo(map);
 
-            // Isi Popup Marker (Sama persis seperti di video tutorial)
+            // Isi Popup Marker
             var popupContent = `
                 <div class="text-center" style="max-width: 200px;">
                     <img src="<?= base_url('foto/' . $s['foto']) ?>" width="100%" height="120px" style="object-fit:cover; border-radius: 5px; margin-bottom:5px;">
@@ -73,6 +75,7 @@ var map = L.map('map').setView([<?= $setting['coordinat_wilayah'] ?>], <?= $sett
             `;
 
             marker.bindPopup(popupContent);
+
         <?php endif; ?>
     <?php endforeach; ?>
 </script>
