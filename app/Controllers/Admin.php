@@ -3,13 +3,20 @@
 namespace App\Controllers;
 
 use App\Models\ModelSetting;
+use App\Models\ModelSekolah; 
+use App\Models\ModelWilayah;
 
 class Admin extends BaseController
 {
+    protected $ModelSetting;
+    protected $ModelSekolah; // 3. Deklarasi Properti
+    protected $ModelWilayah;
 
     public function __construct()
     {
         $this->ModelSetting = new ModelSetting();
+        $this->ModelSekolah = new ModelSekolah(); // 4. Inisialisasi Properti
+        $this->ModelWilayah = new ModelWilayah();
     }
 
     public function index()
@@ -18,6 +25,10 @@ class Admin extends BaseController
             'title' => 'Dashboard',
             'menu'  => 'dashboard',
             'page' => 'v_dashboard',
+            // 5. Kirim data yang dibutuhkan Leaflet.js di v_dashboard.php
+            'setting' => $this->ModelSetting->Dataweb(),
+            'sekolah' => $this->ModelSekolah->allData(),
+            'wilayah' => $this->ModelWilayah->allData(),
         ];
         return view('v_template_back_end', $data);
     }
@@ -47,4 +58,6 @@ class Admin extends BaseController
         session()->setFlashdata('pesan', 'Settingan website telah diupdate !!!');
         return redirect()->to('Admin/Setting');
     }
+
+    
 }

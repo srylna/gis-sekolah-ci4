@@ -341,18 +341,7 @@
                </a>
              </li>
 
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="nav-icon bi bi-grid-fill"></i>
-                <p>
-                    Simple Link
-                    <span class="nav-badge badge text-bg-danger ms-auto">New</span>
-                  </p>
-               </a>
-             </li>
-         </ul>
-    </nav>
-  </div>
+       
   <!--end::Sidebar Wrapper-->
 </aside>
 <!--end::Sidebar-->
