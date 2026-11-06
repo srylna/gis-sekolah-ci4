@@ -62,6 +62,35 @@ L.control.layers(baseMaps).addTo(map);
 setTimeout(function() {
         map.invalidateSize();
     }, 200);
-});
 
+ 
+// 4. Render Marker Sekolah Sesuai Icon Jenjang
+    <?php foreach ($sekolah as $s) : ?>
+        <?php if (!empty($s['coordinat'])) : ?>
+            <?php 
+                $markerFile = !empty($s['marker']) ? $s['marker'] : 'marker.png'; 
+            ?>
+            var iconSekolah = L.icon({
+                iconUrl: '<?= base_url('marker/' . $markerFile) ?>',
+                iconSize: [30, 40],
+                iconAnchor: [15, 40],
+                popupAnchor: [0, -35]
+            });
+
+            var marker = L.marker([<?= $s['coordinat'] ?>], {
+                icon: iconSekolah
+            }).addTo(map);
+
+            var popupContent = `
+                <div class="text-center" style="max-width: 200px;">
+                    <img src="<?= base_url('foto/' . $s['foto']) ?>" width="100%" height="120px" style="object-fit:cover; border-radius: 5px; margin-bottom:5px;">
+                    <h6 class="fw-bold mb-1" style="font-size:13px;"><?= addslashes($s['nama_sekolah']) ?></h6>
+                    <p class="mb-1 text-muted" style="font-size:11px;">Status: <b><?= $s['status'] ?></b></p>
+                    <a href="<?= base_url('Sekolah/Detail/' . $s['id_sekolah']) ?>" class="btn btn-sm btn-primary w-100 mt-1" style="font-size:11px;">Detail</a>
+                </div>
+            `;
+            marker.bindPopup(popupContent);
+        <?php endif; ?>
+    <?php endforeach; ?>
+});
 </script>
